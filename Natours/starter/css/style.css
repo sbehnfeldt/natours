@@ -6,3 +6,40 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+* {
+    /* Basic reset: Universal selector applies to every element */
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 30px;
+
+    /* Properties related to font are usually inherited */
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7; /* 1.7 times bigger than the pre-defined line height */
+    color: #777;
+}
+
+.header {
+    height: 95vh; /* 95% of the viewport height */
+
+
+    /* Gradients are coded with "background-image" property.
+       Multiple images may be specified, separated by comma.
+       To ensure image stays on top, it must be listed last.
+       "url()" is relative to current file */
+    background-image: linear-gradient(to right bottom, rgba(40, 180, 133, .8), rgba(126, 213, 111, 0.8)),
+    url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+
+    /* Specify the region in which the element (.header) will be visible */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
