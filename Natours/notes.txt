@@ -1,3 +1,10 @@
+Course Notes: "Advanced Css and Sass" (https://www.udemy.com/course/advanced-css-and-sass/)
+by Jonas Schmedmann (https://www.udemy.com/course/advanced-css-and-sass/#instructor-1)
+
+********************************************************************************
+* Project 1: Natours Web Site
+********************************************************************************
+
 Chapter 6: Building the Header - Part 1
 * Basic reset: universal selector applies to every element
 * font properties in the body selector, since they are inherited from parent
@@ -15,6 +22,16 @@ Chapter 6: Building the Header - Part 1
 * clip-path property and polygon() function
 * bennettfeely.com/clippy: CSS clip-path maker
 
+Chapter 7: Building the Header - Part 2
+* Position: absolute is relative to nearest positioned ancestor, so position an ancestor
+  (usually with position: relative) even if that ancestor would otherwise be fine with static
+  positioning.
+* <h1> is the primary text for the page, for SEO and screen readers
+* Use <span> to style text.  Multiple <span> within <h1> to style different parts of the <h1>.
+  Style <span> with display: block to break it into two lines.  (<div>, which is a block element
+  naturally, is not permitted within <h1>).
+* Percentages in translate() function are defined relative to height and width of the element itself
+  (not the parent element, as percentages usually are);
 
 MDN: https://developer.mozilla.org/en-US/docs/Web
 

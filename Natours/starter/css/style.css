@@ -28,6 +28,7 @@ body {
 }
 
 .header {
+    position: relative; /* To allow reference point for positioned descendants */
     height: 95vh; /* 95% of the viewport height */
 
 
@@ -42,4 +43,44 @@ body {
 
     /* Specify the region in which the element (.header) will be visible */
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+/* Div containing logo */
+.logo-box {
+    position: absolute;
+
+    /* Offsets relative to nearest "positioned" (relative, absolute or fixed) ancestor */
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;   /* Width will scale accordingly */
+}
+
+.text-box {
+    position: absolute;
+    top: 40%; /* Top of text box is positioned at 50% of parent element height */
+    left: 50%; /* Left of text box is positioned at 50% of parent element width */
+
+    transform: translate(-50%, -50%);  /* Percentages are relative to the element itself */
+}
+
+.heading-primary {
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
 }
