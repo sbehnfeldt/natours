@@ -1,6 +1,8 @@
 Course Notes: "Advanced Css and Sass" (https://www.udemy.com/course/advanced-css-and-sass/)
 by Jonas Schmedmann (https://www.udemy.com/course/advanced-css-and-sass/#instructor-1)
 
+MDN: https://developer.mozilla.org/en-US/docs/Web
+
 ********************************************************************************
 * Project 1: Natours Web Site
 ********************************************************************************
@@ -22,6 +24,7 @@ Chapter 6: Building the Header - Part 1
 * clip-path property and polygon() function
 * bennettfeely.com/clippy: CSS clip-path maker
 
+
 Chapter 7: Building the Header - Part 2
 * Position: absolute is relative to nearest positioned ancestor, so position an ancestor
   (usually with position: relative) even if that ancestor would otherwise be fine with static
@@ -33,5 +36,13 @@ Chapter 7: Building the Header - Part 2
 * Percentages in translate() function are defined relative to height and width of the element itself
   (not the parent element, as percentages usually are);
 
-MDN: https://developer.mozilla.org/en-US/docs/Web
 
+Chapter 8: Creating Cool CSS Animations
+* Using the @keyframes @keyframes rule:
+@keyframes [AnimationName] {
+    [%] {
+        [properties]
+    }
+}
+* for browser performance, only animate opacity and transform
+* "backface-visibility: none" on animated element suppresses animation jitter
