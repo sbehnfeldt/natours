@@ -26,6 +26,7 @@ Chapter 6: Building the Header - Part 1
 
 
 Chapter 7: Building the Header - Part 2
+* Positioning an inline element is easiest if it is wrapped in a block element
 * Position: absolute is relative to nearest positioned ancestor, so position an ancestor
   (usually with position: relative) even if that ancestor would otherwise be fine with static
   positioning.
@@ -46,3 +47,13 @@ Chapter 8: Creating Cool CSS Animations
 }
 * for browser performance, only animate opacity and transform
 * "backface-visibility: none" on animated element suppresses animation jitter
+
+
+Chapter 9: Building a Complex Animated Button - Part 1
+* Psudo-elements and pseudo-classes; ::after pseudo-element; transition property
+* Pseudo-classes are "special state" of selector, to style elements under special conditions
+* :pseudo-class
+* Padding on inline element does not move the element, so background will cover surrouding elements;
+  to fix this, declare the ineline element with display: inline-block.
+* Add transition property on *initial* state
+*

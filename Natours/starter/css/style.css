@@ -45,7 +45,7 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
-/* Div containing logo */
+/* Div (block display) makes positioning the img (inline display) easier */
 .logo-box {
     position: absolute;
 
@@ -60,15 +60,21 @@ body {
 
 .text-box {
     position: absolute;
-    top: 40%; /* Top of text box is positioned at 50% of parent element height */
+    top: 40%; /* Top of text box is positioned at 40% of parent element height */
     left: 50%; /* Left of text box is positioned at 50% of parent element width */
 
     transform: translate(-50%, -50%);  /* Percentages are relative to the element itself */
+
+    text-align: center; /* Centers text descendants AND inline (including inline-block) descendants */
 }
 
 .heading-primary {
+    margin-bottom: 60px;
+
     color: #ffffff;
     text-transform: uppercase;
+
+    backface-visibility: hidden;
 }
 
 .heading-primary-main {
@@ -79,7 +85,6 @@ body {
 
     animation-name: moveInLeft;
     animation-duration: 1s;
-    backface-visibility: hidden;
 }
 
 .heading-primary-sub {
@@ -116,4 +121,34 @@ body {
         opacity: .8;
         transform: translateX(-20px);
     }
+}
+
+/* Button to appear the same whether user has visited it or not */
+.btn:link,
+.btn:visited {
+    display: inline-block; /* Allow block model to work on this element */
+
+    padding: 15px 40px;
+    border-radius: 100px;
+
+    text-transform: uppercase;
+    text-decoration: none;
+
+    transition: transform .2s;   /* transition on the initial state */
+}
+
+.btn:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0, .2); /* x-offset, y-offset, blur, and semi-opaque black shadow */
+    transform: translateY(-3px);
+    backface-visibility: hidden;
+}
+
+.btn:active {
+    box-shadow: 0 5px 10px rgba(0,0,0, .2); /* Tweak shadow from hover state */
+    transform: translateY(-1px);  /* Relative to initial state, not the :hover pseudo-class */
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
 }
