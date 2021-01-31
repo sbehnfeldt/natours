@@ -7,22 +7,41 @@ Dark green: #28b485
 
 */
 
-* {
-    /* Basic reset: Universal selector applies to every element */
+/* Basic reset: Universal selector applies to every element */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+
+    /* Best practice not to over-use the universal selector,
+    so instead declare these properties as inheritable (which they usually are not)
+    and specify the value to inherit in the body selector */
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+html {
+    /* Set root font size to 62.5% of default root font size.
+     Default root font size is 16px by default, set by browser.
+     This results in root font-size (and hence 1 rem) of 10px: .625 * 16px = 10px.
+     Adjusts automatically if user changes default root font size */
+    font-size: 62.5%;
 }
 
 body {
-    padding: 30px;
+    /* Declared as inheritable in the universal selector,
+    so all children sill have box-sizing of border-box */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    padding: 3rem;
 
     /* Properties related to font are usually inherited */
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 16px;
     line-height: 1.7; /* 1.7 times bigger than the pre-defined line height */
     color: #777;
 }
@@ -50,12 +69,12 @@ body {
     position: absolute;
 
     /* Offsets relative to nearest "positioned" (relative, absolute or fixed) ancestor */
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 }
 
 .logo {
-    height: 35px;   /* Width will scale accordingly */
+    height: 3.5rem;   /* Width will scale accordingly */
 }
 
 .text-box {
@@ -69,7 +88,7 @@ body {
 }
 
 .heading-primary {
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
 
     color: #ffffff;
     text-transform: uppercase;
@@ -79,9 +98,9 @@ body {
 
 .heading-primary-main {
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
 
     animation-name: moveInLeft;
     animation-duration: 1s;
@@ -89,9 +108,9 @@ body {
 
 .heading-primary-sub {
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 17.4px;
+    letter-spacing: 1.75rem;
 
     animation-name: moveInRight;
     animation-duration: 1s;
@@ -102,31 +121,31 @@ body {
 @keyframes moveInLeft {
     0% {
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateX(-10rem);
     }
 
     80% {
         opacity: .8;
-        transform: translateX(20px);
+        transform: translateX(2rem);
     }
 }
 
 @keyframes moveInRight {
     0% {
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(10rem);
     }
 
     80% {
         opacity: .8;
-        transform: translateX(-20px);
+        transform: translateX(-2rem);
     }
 }
 
 @keyframes moveInBottom {
     0% {
         opacity: 0;
-        transform: translateY(100px);
+        transform: translateY(10rem);
     }
 }
 
@@ -136,9 +155,10 @@ body {
     position: relative;    /* To position ::after pseudo-element */
     display: inline-block; /* Allow block model to work on this element */
 
-    padding: 15px 40px;
-    border-radius: 100px;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
 
+    font-size: 1.6rem;
     text-transform: uppercase;
     text-decoration: none;
 
@@ -146,13 +166,13 @@ body {
 }
 
 .btn:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0, .2); /* x-offset, y-offset, blur, and semi-opaque black shadow */
+    box-shadow: 0 1rem 2rem rgba(0,0,0, .2); /* x-offset, y-offset, blur, and semi-opaque black shadow */
     transform: translateY(-3px);
     backface-visibility: hidden;
 }
 
 .btn:active {
-    box-shadow: 0 5px 10px rgba(0,0,0, .2); /* Tweak shadow from hover state */
+    box-shadow: 0 .5rem 1rem rgba(0,0,0, .2); /* Tweak shadow from hover state */
     transform: translateY(-1px);  /* Relative to initial state, not the :hover pseudo-class */
 }
 
@@ -175,7 +195,7 @@ body {
     height: 100%;
     width: 100%;
 
-    border-radius: 100px;
+    border-radius: 10rem;
 
     transition: transform .5s, opacity .5s;
 }
