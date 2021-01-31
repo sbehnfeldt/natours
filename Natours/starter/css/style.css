@@ -123,9 +123,17 @@ body {
     }
 }
 
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+}
+
 /* Button to appear the same whether user has visited it or not */
 .btn:link,
 .btn:visited {
+    position: relative;    /* To position ::after pseudo-element */
     display: inline-block; /* Allow block model to work on this element */
 
     padding: 15px 40px;
@@ -151,4 +159,41 @@ body {
 .btn-white {
     background-color: #fff;
     color: #777;
+}
+
+.btn::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;   /* Behind the parent .btn */
+
+    display: inline-block;   /* Same as the .btn */
+
+    /* ::after is treated as a child of the main element; height and width are relative to the parent */
+    height: 100%;
+    width: 100%;
+
+    border-radius: 100px;
+
+    transition: transform .5s, opacity .5s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+/* ::after pseudo-element ONLY after .btn in :hover pseudo-class state */
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-delay: .75s;
+    animation-fill-mode: backwards;   /* Apply properties of the 0% animation state before animation starts */
 }

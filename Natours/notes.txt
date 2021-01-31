@@ -50,10 +50,17 @@ Chapter 8: Creating Cool CSS Animations
 
 
 Chapter 9: Building a Complex Animated Button - Part 1
-* Psudo-elements and pseudo-classes; ::after pseudo-element; transition property
 * Pseudo-classes are "special state" of selector, to style elements under special conditions
 * :pseudo-class
 * Padding on inline element does not move the element, so background will cover surrouding elements;
   to fix this, declare the ineline element with display: inline-block.
 * Add transition property on *initial* state
-*
+
+
+Chapter 10: Building a Complex Animated button - Part 2
+* Psudo-elements "let you style a specific part of the selected element" (MDN).
+* ::pseudo-element
+* ::after pseudo-element adds a virtual element after the selected element
+* To achieve the effect in this lesson, add element exactly like the current one, but behind it
+* ::after needs content (even if its empty) via "content:" property to appear on page
+* ::after needs "display" property to appear on page
