@@ -7,7 +7,7 @@ MDN: https://developer.mozilla.org/en-US/docs/Web
 * Project 1: Natours Web Site
 ********************************************************************************
 
-Chapter 6: Building the Header - Part 1
+Lecture 6) Building the Header - Part 1
 * Basic reset: universal selector applies to every element
 * font properties in the body selector, since they are inherited from parent
 * background images use "url()" function, relative to location of the style sheet
@@ -25,7 +25,7 @@ Chapter 6: Building the Header - Part 1
 * bennettfeely.com/clippy: CSS clip-path maker
 
 
-Chapter 7: Building the Header - Part 2
+Lecture 7) Building the Header - Part 2
 * Positioning an inline element is easiest if it is wrapped in a block element
 * Position: absolute is relative to nearest positioned ancestor, so position an ancestor
   (usually with position: relative) even if that ancestor would otherwise be fine with static
@@ -38,7 +38,7 @@ Chapter 7: Building the Header - Part 2
   (not the parent element, as percentages usually are);
 
 
-Chapter 8: Creating Cool CSS Animations
+Lecture 8) Creating Cool CSS Animations
 * Using the @keyframes @keyframes rule:
 @keyframes [AnimationName] {
     [%] {
@@ -49,7 +49,7 @@ Chapter 8: Creating Cool CSS Animations
 * "backface-visibility: none" on animated element suppresses animation jitter
 
 
-Chapter 9: Building a Complex Animated Button - Part 1
+Lecture 9) Building a Complex Animated Button - Part 1
 * Pseudo-classes are "special state" of selector, to style elements under special conditions
 * :pseudo-class
 * Padding on inline element does not move the element, so background will cover surrouding elements;
@@ -57,7 +57,7 @@ Chapter 9: Building a Complex Animated Button - Part 1
 * Add transition property on *initial* state
 
 
-Chapter 10: Building a Complex Animated button - Part 2
+Lecture 10) Building a Complex Animated button - Part 2
 * Psudo-elements "let you style a specific part of the selected element" (MDN).
 * ::pseudo-element
 * ::after pseudo-element adds a virtual element after the selected element
@@ -66,7 +66,7 @@ Chapter 10: Building a Complex Animated button - Part 2
 * ::after needs "display" property to appear on page
 
 
-Chapter 12: Three Pillars of Writing Good HTML and CSS
+Lecture 12) Three Pillars of Writing Good HTML and CSS
 * Responsive Design:
   * fluid layouts
   * media queries
@@ -88,13 +88,13 @@ Chapter 12: Three Pillars of Writing Good HTML and CSS
   * fewer images, compressed images
 
 
-Chapter 13: How CSS Works Behind the Schenes: An Overview
+Lecture 13) How CSS Works Behind the Schenes: An Overview
 * CSS parsing:
   * Resolve conflicting CSS declarations (cascade)
   * Process final CSS values
 
 
-Chapter 14: How CSS is Parsed, Part 1: The Cascade and Specificity
+Lecture 14) How CSS is Parsed, Part 1: The Cascade and Specificity
 * Cascade: process of resolving conflicts between rules when more than one rule applies to an element
 * CSS sources: author, user, browser ("user agent")
 * Importance > specificity > source order
@@ -115,7 +115,7 @@ Chapter 14: How CSS is Parsed, Part 1: The Cascade and Specificity
 * But rely on order when using 3rd party stylesheets: always put your sheet last.
 
 
-Chapter 16: How CSS is Parsed, Part 2: Value Processing
+Lecture 16) How CSS is Parsed, Part 2: Value Processing
 * Example of how browser calculates values, step by step
 * All linear units eventually converted to pixels
 * declared value
@@ -133,7 +133,7 @@ Chapter 16: How CSS is Parsed, Part 2: Value Processing
 * vw: 1% of viewport width
 
 
-Chapter 17: How CSS is Parsed, Part 3: Inheritance
+Lecture 17) How CSS is Parsed, Part 3: Inheritance
 * propagating property values from parent elements to children
 * inheritance: specified value = COMPUTED value of parent element
 * generally, text-related properties are inheritable, others not
@@ -141,3 +141,49 @@ Chapter 17: How CSS is Parsed, Part 3: Inheritance
 * values inherited only if value is not declared
 * "inherit" keyword forces inheritance
 * "initial" keyword restores value to initial value
+
+
+Lecture 19) How CSS Renders a Website: The Visual Formatting Model
+* Box model: every element
+* Content: text, images, etc.
+* Padding: transparent area around content inside of box
+* Border: goes around content
+* Margin: Space between boxes
+* Fill area: content + padding + border (not margin)
+* height of box, if not otherwise specified, is height of content
+* default box-sizing: height and width exclude padding and border
+* border-box: height and width include padding and border
+* block element:
+  * displayed as block
+  * also include flex, list-item and table displays
+  * 100% of parent width
+  * vertical stack, includes line break
+  * box model applies as showed
+* inline
+  * content distributed in lintes
+  * occupies only the content's space
+  * no line breaks
+  * NO HEIGHT AND WIDTH
+  * padding and margin on left and right only
+* inline-block
+  * inline boxes but with box model applied as showed
+* Positioning schemes: normal, float, absolute
+* normal: default, laid out in source order
+* float: container will not adjust height to element; requires clear fix
+* absolute:
+  * element removed from normal flow
+  * no impact on surrounding content or elements
+  * offset w/ top, bottom, left, right
+* stacking context: z-index and others
+
+Lecture 20) CSS Architecture, Components and BEM
+* page: components held together by the layout
+* components should be re-usable across, between projects;
+* components should be independent of parent
+* BEM: Block-element modifier paradigm
+  * block: standalone component meaningful on its own
+  * element: part of a block lacking independent meaning
+  * element class name includes block classname: low specificity
+  * modifier: modifies the element
+* 7-1 Pattern: 7 folders for partial Sass files, 1 main Sass file
+  * base/ components/ layout/ pages/ themes/ abstracts/ vendors/
