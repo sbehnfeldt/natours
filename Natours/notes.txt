@@ -187,3 +187,26 @@ Lecture 20) CSS Architecture, Components and BEM
   * modifier: modifies the element
 * 7-1 Pattern: 7 folders for partial Sass files, 1 main Sass file
   * base/ components/ layout/ pages/ themes/ abstracts/ vendors/
+
+
+Lecture 24) First Steps with Sass: Variables and Nesting
+* SASS functions darken, lighten
+
+
+Lecture 25) First Steps with Sass: Mixins, Extends and Functions
+* mixin: re-usable piece of SASS
+* @mixin to define
+* @include to use
+* mixins can take parameters
+* SASS user-defined functions:
+    @function divide($a, $b) {
+        @return $a/$b;
+    }
+
+* SASS extends:
+  %btn-placeholder {
+     padding: 10px;
+  }
+  @extend %btn-placeholder
+* @include copies the included text to the selector; @extend copies the selector to the extension
+* Use @extends only if the rules being extended are inherently related
