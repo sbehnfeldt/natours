@@ -4,6 +4,8 @@ $color-primary-dark: #28b485;
 
 $color-grey-dark: #777;
 $color-white: #fff;
+$color-black: #000;
+
 
 /* Basic reset: Universal selector applies to every element */
 *,
@@ -60,29 +62,31 @@ body {
 
   /* Specify the region in which the element (.header) will be visible */
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-}
 
-/* Div (block display) makes positioning the img (inline display) easier */
-.header__logo-box {
-  position: absolute;
 
-  /* Offsets relative to nearest "positioned" (relative, absolute or fixed) ancestor */
-  top: 4rem;
-  left: 4rem;
-}
+  /* Div (block display) makes positioning the img (inline display) easier */
+  &__logo-box {
+    position: absolute;
 
-.logo {
-  height: 3.5rem;   /* Width will scale accordingly */
-}
+    /* Offsets relative to nearest "positioned" (relative, absolute or fixed) ancestor */
+    top: 4rem;
+    left: 4rem;
 
-.header__text-box {
-  position: absolute;
-  top: 40%; /* Top of text box is positioned at 40% of parent element height */
-  left: 50%; /* Left of text box is positioned at 50% of parent element width */
+  }
 
-  transform: translate(-50%, -50%);  /* Percentages are relative to the element itself */
+  &__logo {
+    height: 3.5rem;   /* Width will scale accordingly */
+  }
 
-  text-align: center; /* Centers text descendants AND inline (including inline-block) descendants */
+  &__text-box {
+    position: absolute;
+    top: 40%; /* Top of text box is positioned at 40% of parent element height */
+    left: 50%; /* Left of text box is positioned at 50% of parent element width */
+
+    transform: translate(-50%, -50%);  /* Percentages are relative to the element itself */
+
+    text-align: center; /* Centers text descendants AND inline (including inline-block) descendants */
+  }
 }
 
 .heading-primary {
@@ -92,27 +96,28 @@ body {
   text-transform: uppercase;
 
   backface-visibility: hidden;
-}
 
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
 
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-}
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+  }
 
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
 
-  animation-name: moveInRight;
-  animation-duration: 1s;
-  backface-visibility: hidden;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    backface-visibility: hidden;
+  }
+
 }
 
 
@@ -147,71 +152,74 @@ body {
   }
 }
 
-/* Button to appear the same whether user has visited it or not */
-.btn:link,
-.btn:visited {
-  position: relative;    /* To position ::after pseudo-element */
-  display: inline-block; /* Allow block model to work on this element */
+.btn {
 
-  padding: 1.5rem 4rem;
-  border-radius: 10rem;
+  /* Button to appear the same whether user has visited it or not */
+  &:link,
+  &:visited {
+    position: relative; /* To position ::after pseudo-element */
+    display: inline-block; /* Allow block model to work on this element */
 
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  text-decoration: none;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
 
-  transition: transform .2s;   /* transition on the initial state */
-}
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    text-decoration: none;
 
-.btn:hover {
-  box-shadow: 0 1rem 2rem rgba(0,0,0, .2); /* x-offset, y-offset, blur, and semi-opaque black shadow */
-  transform: translateY(-3px);
-  backface-visibility: hidden;
-}
+    transition: transform .2s; /* transition on the initial state */
+  }
 
-.btn:active {
-  box-shadow: 0 .5rem 1rem rgba(0,0,0, .2); /* Tweak shadow from hover state */
-  transform: translateY(-1px);  /* Relative to initial state, not the :hover pseudo-class */
-}
+  &:hover {
+    box-shadow: 0 1rem 2rem rgba($color-black, .2); /* x-offset, y-offset, blur, and semi-opaque black shadow */
+    transform: translateY(-3px);
+    backface-visibility: hidden;
 
-.btn--white {
-  background-color: $color-white;
-  color: $color-grey-dark;
-}
+    /* ::after pseudo-element ONLY after .btn in :hover pseudo-class state */
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
 
-.btn::after {
-  content: "";
+  &:active {
+    box-shadow: 0 .5rem 1rem rgba($color-black, .2); /* Tweak shadow from hover state */
+    transform: translateY(-1px); /* Relative to initial state, not the :hover pseudo-class */
+  }
 
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;   /* Behind the parent .btn */
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
 
-  display: inline-block;   /* Same as the .btn */
+    &::after {
+      background-color: $color-white;
+    }
+  }
 
-  /* ::after is treated as a child of the main element; height and width are relative to the parent */
-  height: 100%;
-  width: 100%;
+  &::after {
+    content: "";
 
-  border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Behind the parent .btn */
 
-  transition: transform .5s, opacity .5s;
-}
+    display: inline-block; /* Same as the .btn */
 
-.btn--white::after {
-  background-color: $color-white;
-}
+    /* ::after is treated as a child of the main element; height and width are relative to the parent */
+    height: 100%;
+    width: 100%;
 
-/* ::after pseudo-element ONLY after .btn in :hover pseudo-class state */
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
+    border-radius: 10rem;
 
-.btn--animated {
-  animation: moveInBottom;
-  animation-duration: .5s;
-  animation-timing-function: ease-out;
-  animation-delay: .75s;
-  animation-fill-mode: backwards;   /* Apply properties of the 0% animation state before animation starts */
+    transition: transform .5s, opacity .5s;
+  }
+
+  &--animated {
+    animation: moveInBottom;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-delay: .75s;
+    animation-fill-mode: backwards; /* Apply properties of the 0% animation state before animation starts */
+  }
 }
