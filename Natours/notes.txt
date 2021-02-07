@@ -176,6 +176,7 @@ Lecture 19) How CSS Renders a Website: The Visual Formatting Model
   * offset w/ top, bottom, left, right
 * stacking context: z-index and others
 
+
 Lecture 20) CSS Architecture, Components and BEM
 * page: components held together by the layout
 * components should be re-usable across, between projects;
