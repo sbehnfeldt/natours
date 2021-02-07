@@ -236,6 +236,17 @@ scripts {
 $> npm run compile:sass
 
 
-Lecture 29) The Easiset Way of Automatically Reloading a Page on File Changes
+Lecture 29) The Easiest Way of Automatically Reloading a Page on File Changes
 $> npm install -g live-server
 $> live-server
+
+
+Lecture 32) Implementing the 7-1 CSS Architecture with Sass
+* 7 sub-directories, 1 main file including them all
+* partials start with underscore
+* base/ for low-level styles: resets, <html> and <body>.  base, utilities, typography, animations
+* abstracts/ does not output css.  variables, mixins, functions.
+* components/ independent, reusable building blocks composing the page held together by layout.
+* layouts/ for each piece of the global layout
+* pages/ styles for specific page. home
+* themes/ and vendors/ not used in this project.

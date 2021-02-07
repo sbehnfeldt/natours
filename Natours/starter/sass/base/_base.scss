@@ -1,0 +1,33 @@
+/* Very low-level styles: Resets, <html>, <body> */
+
+/* Basic reset: Universal selector applies to every element */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+
+  /* Best practice not to over-use the universal selector,
+  so instead declare these properties as inheritable (which they usually are not)
+  and specify the value to inherit in the body selector */
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  /* Set root font size to 62.5% of default root font size.
+   Default root font size is 16px by default, set by browser.
+   This results in root font-size (and hence 1 rem) of 10px: .625 * 16px = 10px.
+   Adjusts automatically if user changes default root font size */
+  font-size: 62.5%;
+}
+
+body {
+  /* Declared as inheritable in the universal selector,
+  so all children sill have box-sizing of border-box */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+}

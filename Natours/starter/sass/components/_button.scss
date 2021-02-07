@@ -1,0 +1,71 @@
+.btn {
+
+  /* Button to appear the same whether user has visited it or not */
+  &:link,
+  &:visited {
+    position: relative; /* To position ::after pseudo-element */
+    display: inline-block; /* Allow block model to work on this element */
+
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    transition: transform .2s; /* transition on the initial state */
+  }
+
+  &:hover {
+    box-shadow: 0 1rem 2rem rgba($color-black, .2); /* x-offset, y-offset, blur, and semi-opaque black shadow */
+    transform: translateY(-3px);
+    backface-visibility: hidden;
+
+    /* ::after pseudo-element ONLY after .btn in :hover pseudo-class state */
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    box-shadow: 0 .5rem 1rem rgba($color-black, .2); /* Tweak shadow from hover state */
+    transform: translateY(-1px); /* Relative to initial state, not the :hover pseudo-class */
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Behind the parent .btn */
+
+    display: inline-block; /* Same as the .btn */
+
+    /* ::after is treated as a child of the main element; height and width are relative to the parent */
+    height: 100%;
+    width: 100%;
+
+    border-radius: 10rem;
+
+    transition: transform .5s, opacity .5s;
+  }
+
+  &--animated {
+    animation: moveInBottom;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-delay: .75s;
+    animation-fill-mode: backwards; /* Apply properties of the 0% animation state before animation starts */
+  }
+}
