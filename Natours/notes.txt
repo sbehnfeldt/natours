@@ -250,3 +250,23 @@ Lecture 32) Implementing the 7-1 CSS Architecture with Sass
 * layouts/ for each piece of the global layout
 * pages/ styles for specific page. home
 * themes/ and vendors/ not used in this project.
+
+
+Lecture 33) Basic Principles of Responsive Design and Layout Types
+* Fluid grids and layouts.  % instead of pixels: floats, flexbox, css grid.
+* Flexible/responsive images. Typically largest part of website; optimize
+* Media queries, breakpoints.
+* Layout is single most important aspect of design.
+
+Lecture 34) Building a Custom Grid with Floats
+* Grid: columns and gutters, rows
+* Center block element w/in block element: margin: 0 auto;
+* calc(): CSS function takes place during page layout, not during SCSS pre-processing
+* Using SASS variable in calc() requires wrapping the variable in #{}
+* Floating all elements collapses height of container
+* Attribute selectors:
+* [foo="bar"] elements w/ attribute foo of bar
+* [foo^="bar"] elements w/ attribute beginning w/ bar
+* [foo*="bar"] elements w/ attribute containing bar
+* [foo$="bar"] elements w/ attribute ending w/ bar
+
