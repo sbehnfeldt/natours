@@ -270,3 +270,11 @@ Lecture 34) Building a Custom Grid with Floats
 * [foo*="bar"] elements w/ attribute containing bar
 * [foo$="bar"] elements w/ attribute ending w/ bar
 
+
+Lecture 35) Building the About Section (Part 1)
+* Components
+* Utility classes: Small classes to apply a single style to multiple elements
+* background-clip property: clip background image to restrict its display
+* transform for multiple properties: list the properties all together
+* outline and outline-offset properties ?
+* styling unhovered elements ?
