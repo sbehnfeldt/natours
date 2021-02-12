@@ -282,3 +282,8 @@ Lecture 35) Building the About Section - Part 1
 
 Lecture 36) Building the About Section - Part 2
 * Styled a link to look more like a button
+
+
+Lecture 37) Building the About Section - Part 3,
+* Define width of images in %, to scale with viewport size
+* outline, outline-offset
