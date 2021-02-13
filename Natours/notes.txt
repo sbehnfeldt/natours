@@ -287,3 +287,16 @@ Lecture 36) Building the About Section - Part 2
 Lecture 37) Building the About Section - Part 3,
 * Define width of images in %, to scale with viewport size
 * outline, outline-offset
+
+Lecture 38) Building the Features Section
+* include and use icon font (linea.io)
+* "skewed" section design
+* direct child selector ">"
+* fonts/ directory contains different files for different browsers
+* Used transform: skew() to achieve similar effect implemented using "clip-path" in header
+* Need to "un-skew" direct children using direct childe selector ">"
+* The feature boxes scale to the size of the content, independently of their siblings' sizes, so if they contain
+  different amount of text, they will be different sizes.  (frowny face.)  Another student raised this question
+  and offered a solution: a bit of a kludge, using absolute values (not relative like percentages or something),
+  which doesn't seem like it would be particularly responsive, but the instructor could offer nothing better:
+  https://www.udemy.com/course/advanced-css-and-sass/learn/lecture/8274498#questions/10682678
