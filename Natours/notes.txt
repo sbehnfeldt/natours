@@ -287,3 +287,11 @@ Lecture 36) Building the About Section - Part 2
 Lecture 37) Building the About Section - Part 3,
 * Define width of images in %, to scale with viewport size
 * outline, outline-offset
+
+Lecture 38) Building the Features Section
+* include and use icon font (linea.io)
+* "skewed" section design
+* direct child selector ">"
+* fonts/ directory contains different files for different browsers
+* Used transform: skew() to achieve similar effect implemented using "clip-path" in header
+* Need to "un-skew" direct children using direct childe selector ">"
