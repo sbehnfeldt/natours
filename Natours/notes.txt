@@ -288,6 +288,7 @@ Lecture 37) Building the About Section - Part 3,
 * Define width of images in %, to scale with viewport size
 * outline, outline-offset
 
+
 Lecture 38) Building the Features Section
 * include and use icon font (linea.io)
 * "skewed" section design
@@ -300,3 +301,12 @@ Lecture 38) Building the Features Section
   and offered a solution: a bit of a kludge, using absolute values (not relative like percentages or something),
   which doesn't seem like it would be particularly responsive, but the instructor could offer nothing better:
   https://www.udemy.com/course/advanced-css-and-sass/learn/lecture/8274498#questions/10682678
+
+
+Lecture 39) Building the Tours Section - Part 1
+* Rotating Card effect: perspective; backface-visibility property; background blend modes; box-decoration-break
+* transform: rotate.  Apply perspective on parent
+* perspective: lower value => more dramatic effect; start high, work down
+* IMPORTANT: When children are taken out of the natural flow (eg floats, absolute pos) the parent height collapses to 0
+  * floats: clearfix
+  * absolute: explicit height on parent, same as height of child
