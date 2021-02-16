@@ -318,3 +318,10 @@ Lecture 40) Building the Tours Section - Part 2
 * background-blend-mode: how an element's background images blend with each other and with the element's background color.
 * bg image overwrites parent element's rounded corners; use overflow: hidden on parent
 * box-decoration-break property specifies how an element's fragments should be rendered when split across lines, columns or pages
+
+
+Lecture 41) Building the Tours Section - Part 3
+* 2nd and 3rd cards based on 1st
+* card backs: mostly work, nothing really new
+* centering div in div: "margin: 0 auto" in child
+* center inline in div: "text-align: center" in parent
