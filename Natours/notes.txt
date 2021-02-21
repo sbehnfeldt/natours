@@ -350,3 +350,11 @@ Lecture 44) Building the Stories Section - Part 3
 * free videos from coverr.io
 * fit bg video to container w/ "object-fit" property
 
+Lecture 45) Building the Booking Section - Part 1
+* solid color gradients
+* general and adjacent sibling selectors
+* ::input-placeholder pseudo-element
+* :focus, :invalid, :placeholder-shown and :checked pseudo-classes
+* custom radio buttons
+* using percentage values in linear-gradient to specify where the colors start/stop to achieve hard edge
+
