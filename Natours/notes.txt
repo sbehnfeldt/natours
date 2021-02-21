@@ -325,3 +325,12 @@ Lecture 41) Building the Tours Section - Part 3
 * card backs: mostly work, nothing really new
 * centering div in div: "margin: 0 auto" in child
 * center inline in div: "text-align: center" in parent
+
+
+Lecture 42) Building the Stories Section - Part 1
+* text flow around shapes w/ "shape-outside" and "float" properties
+* filter images
+* bg video covering entire section
+* <video> element
+* "object-fit" property
+* circle CSS function. Requires element has defined height & width, and floated
