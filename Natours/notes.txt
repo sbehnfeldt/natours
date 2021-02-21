@@ -334,3 +334,11 @@ Lecture 42) Building the Stories Section - Part 1
 * <video> element
 * "object-fit" property
 * circle CSS function. Requires element has defined height & width, and floated
+
+
+Lecture 43) Building the Stories Section - Part 2
+* <figure> with <img> and <figcaption> children
+* "filter" property on images
+* Skewing image on Chrome leaves a trace of the original image outside the circle clip path,
+  resolved by changing the skew from 12deg to 12.01deg (not sure why) and/or overflow: hidden
+  ref: https://www.udemy.com/course/advanced-css-and-sass/learn/lecture/8274510#questions/7987144
