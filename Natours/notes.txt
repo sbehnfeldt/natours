@@ -342,3 +342,11 @@ Lecture 43) Building the Stories Section - Part 2
 * Skewing image on Chrome leaves a trace of the original image outside the circle clip path,
   resolved by changing the skew from 12deg to 12.01deg (not sure why) and/or overflow: hidden
   ref: https://www.udemy.com/course/advanced-css-and-sass/learn/lecture/8274510#questions/7987144
+
+Lecture 44) Building the Stories Section - Part 3
+* background video
+* <video> with <source> child (not using "src" attrib), w/ autoplay muted loop attribs
+* use default text if <video> not supported
+* free videos from coverr.io
+* fit bg video to container w/ "object-fit" property
+
