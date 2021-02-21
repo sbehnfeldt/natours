@@ -358,3 +358,8 @@ Lecture 45) Building the Booking Section - Part 1
 * custom radio buttons
 * using percentage values in linear-gradient to specify where the colors start/stop to achieve hard edge
 
+
+Lecture 46) Building the Booking Section - Part 2
+* placeholder text in inputs does not inherit font family
+* general sibling selector: ~
+* adjacent sibling selector: +
