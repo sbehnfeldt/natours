@@ -363,3 +363,8 @@ Lecture 46) Building the Booking Section - Part 2
 * placeholder text in inputs does not inherit font family
 * general sibling selector: ~
 * adjacent sibling selector: +
+
+
+Lecture 46) Building the Booking Section - Part 3
+* custom radio buttons
+* Cannot style radio buttons through CSS, so build custom radio via <span>

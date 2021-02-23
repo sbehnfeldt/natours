@@ -1,6 +1,7 @@
 .btn {
 
   /* Button to appear the same whether user has visited it or not */
+  &,
   &:link,
   &:visited {
     position: relative; /* To position ::after pseudo-element */
@@ -14,9 +15,15 @@
     text-decoration: none;
 
     transition: transform .2s; /* transition on the initial state */
+
+    // Styling For the <button> element only
+    border: none;
+    cursor: pointer;
   }
 
+
   &:hover {
+
     box-shadow: 0 1rem 2rem rgba($color-black, .2); /* x-offset, y-offset, blur, and semi-opaque black shadow */
     transform: translateY(-3px);
     backface-visibility: hidden;
@@ -28,7 +35,9 @@
     }
   }
 
+  &:focus,
   &:active {
+    outline: none;
     box-shadow: 0 .5rem 1rem rgba($color-black, .2); /* Tweak shadow from hover state */
     transform: translateY(-1px); /* Relative to initial state, not the :hover pseudo-class */
   }
