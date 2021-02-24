@@ -370,5 +370,12 @@ Lecture 47) Building the Booking Section - Part 3
 * Cannot style radio buttons through CSS, so build custom radio via <span>
 
 
-Lecture 48) Building the Footer
+Lecture 49) Building the Navigation - Part 1
+* animating solid-color gradients:
+  * "background-image" (for the solid-color gradient)
+  * "background-size" (so both halves of the background exceed the size of the foreground)
+  * "background-position" (to display the correct half of the background)
+* checkbox hack: hidden checkbox, plus label for it, plus the reveal
+* custom animation timing functions / cubic bezier curves
+* "transform-origin" property
 
