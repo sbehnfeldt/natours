@@ -382,3 +382,6 @@ Lecture 49) Building the Navigation - Part 1
 Lecture 50) Building the Navigation - Part 2
 * Timing functions: cubic-bezier()
 * ref: easings.net
+
+Lecture 51) Building the Navigation - Part 3
+* animated hamburger menu using checkbox hack
