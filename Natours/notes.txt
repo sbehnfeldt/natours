@@ -379,3 +379,6 @@ Lecture 49) Building the Navigation - Part 1
 * custom animation timing functions / cubic bezier curves
 * "transform-origin" property
 
+Lecture 50) Building the Navigation - Part 2
+* Timing functions: cubic-bezier()
+* ref: easings.net
