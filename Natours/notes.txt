@@ -385,3 +385,10 @@ Lecture 50) Building the Navigation - Part 2
 
 Lecture 51) Building the Navigation - Part 3
 * animated hamburger menu using checkbox hack
+
+Lecture 52) Building a Pure CSS Popup - Part 1
+* display: table and table-cell (parent and child) for layouts
+* "vertical-align" property for table-cell
+* CSS text column properties: column-count, column-gap, column-rule
+* automatically hyphenate words with "hyphen" property (requires "lang" attrib in <html> element)
+* :target pseudo-class
