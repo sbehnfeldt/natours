@@ -398,3 +398,17 @@ Lecture 52) Building a Pure CSS Popup - Part 1
 Lecture 53) Building a Pure CSS Popup - Part 2
 * :target pseudo-class
 
+
+Lecture 55) Mobile-First vs Desktop-First and Breakpoints
+* gs.statcounter.com/screen-resolution
+* 600px, 900px, 1200px, 1800px: phone-portrait, tab-portrait, tab-landscape, desktop, massive
+
+
+Lecture 56) Sass Mixins and Media Queries
+* ems and rems in media queries are NOT affected by root font size setting
+* ems or rems in media queries equals browser's font size
+  (16px by default, can be modified by user)
+* EXPERTS: "ems better than rems in media queries"
+* arrange max-width media queries (desktop-first) in order of decreasing breakpoint size
+* arrange min-width media queries (mobile-first) in order of increasing breakpoint size
+
