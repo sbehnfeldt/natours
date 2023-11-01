@@ -22,16 +22,21 @@ html {
    Adjusts automatically if user changes default root font size */
   font-size: 62.5%;   // 1rem = 10px: 10px/16px = .625
 
-  // Arrange max-width media queries in decreasing breakpoint size
+  // For desktop-first, arrange media queries in DECREASING max-width
+  // (except for "big-desktop", which is bigger than the "default" size of desktop, and goes at the end)
   @include respond(tab-land) {
     font-size: 56.25%;   // 1 rem = 9px, 9/16 = .5625
   }
-  @include respond(tab-port) {
+  @include respond(phone) {
     font-size: 50%;   // 1rem = 8px, 8/16 = .5
+    color: orangered !important;
   }
+
   @include respond(big-desktop) {
     font-size: 75%;   // 1rem = 12px, 12/16 = .75
   }
+
+  // For mobile-first, arrange media queries in INCREASING min-width
 }
 
 body {
