@@ -600,3 +600,8 @@ html {
 }
 ```
 
+### Lesson 57) Writing Media Queries - Base, Typography and Layout
+
+ORDER: Base + typography > general layout + grid > page layout > components
+In grid systems, column width is typically set to 100% for smaller screens
+since they don't have the horizontal real estate to support multiple adjacent columns.
