@@ -605,3 +605,5 @@ html {
 ORDER: Base + typography > general layout + grid > page layout > components
 In grid systems, column width is typically set to 100% for smaller screens
 since they don't have the horizontal real estate to support multiple adjacent columns.
+
+### Lecture 58) Writing Media Queries - Layout, About and Features Sections
