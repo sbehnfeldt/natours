@@ -700,4 +700,13 @@ ORDER: Base + typography > general layout + grid > page layout > components
 In grid systems, column width is typically set to 100% for smaller screens
 since they don't have the horizontal real estate to support multiple adjacent columns.
 
-### Lecture 58) Writing Media Queries - Layout, About and Features Sections
+
+### Lecture 58) Writing Media Queries - Tours, Stories and Booking Sections
+The cards in the Tours section flip over when user hovers over them.  
+But touch-screen devices don't have a "hover" state.
+So the cards must be styled differently for these devices.
+We use media queries to do this.
+
+But for some sections, this will be a huge re-write, not just simply tweaking existing rules.
+So we put the whole media query as a separate, stand-alone section,
+copying all the original CSS and removing what is not needed.

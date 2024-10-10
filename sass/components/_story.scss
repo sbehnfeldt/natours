@@ -1,62 +1,80 @@
 .story {
-  width: 75%;
-  margin: 0 auto;
-  box-shadow: 0 3rem 6rem rgba($color-black, .1);
-  background-color: rgba($color-white, .6);
-  border-radius: 3px;
-  padding: 6rem;
-  padding-left: 9rem; // Account for transform of -3rem to the shape
-  font-size: $default-font-size;
-  transform: skewX(-12deg);
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    background-color: rgba($color-white, .6);
+    border-radius: 3px;
 
-  & > * {
-    // Does not style child properties with their own transform property
-    // because the universal selector has 0 specificity,
-    // so the class selectors of the children take precedence
-    transform: skewX(12deg);
-  }
+    padding: 6rem 6rem 6rem 9rem;   // 9rem to account for transform of -3rem to the shape
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
 
-  &__shape {
-    position: relative;
-    width: 15rem;
-    height: 15rem;
-    float: left;
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(50% at 50% 50%);
+    @include respond(tab-port) {
+        width: 100%;
+        padding: 4rem 4rem 4rem 7rem;
+    }
 
-    clip-path: circle(50% at 50% 50%);
-    transform: translateX(-3rem) skewX(12.01deg);
-  }
+    @include respond(phone) {
+        transform: skewX(0);
+    }
 
-  &__img {
-    height: 100%; // 100% of the parent
-    transform: translateX(-4rem) scale(1.4);
-    backface-visibility: hidden;
-    transition: all .5s;
-  }
+    & > * {
+        // Does not style child properties with their own transform property
+        // because the universal selector has 0 specificity,
+        // so the class selectors of the children take precedence
+        transform: skewX(12deg);
 
-  &__caption {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    opacity: 0;
-    color: $color-white;
-    text-transform: uppercase;
-    font-size: 1.7rem;
-    text-align: center;
+        @include respond(phone) {
+            transform: skewX(0);
+        }
 
-    transition: all .5s;
-    backface-visibility: hidden;
-  }
+    }
 
-  &:hover &__caption {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
+    &__shape {
+        position: relative;
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
 
-  &:hover &__img {
-    transform: translateX(-4rem) scale(1);
-    filter: blur(3px) brightness(80%);
-  }
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg);
+
+        @include respond(phone) {
+            transform: translateX(-3) skewX(0);
+        }
+    }
+
+    &__img {
+        height: 100%; // 100% of the parent
+        transform: translateX(-4rem) scale(1.4);
+        backface-visibility: hidden;
+        transition: all .5s;
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        opacity: 0;
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+
+        transition: all .5s;
+        backface-visibility: hidden;
+    }
+
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__img {
+        transform: translateX(-4rem) scale(1);
+        filter: blur(3px) brightness(80%);
+    }
 }
