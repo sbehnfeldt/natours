@@ -1,44 +1,84 @@
-# Advanced Css and Sass
+# Advanced Css and Sass Project 1: Natours Website
+
+Website for a fictional nature tours company
 
 Course Notes: (https://www.udemy.com/course/advanced-css-and-sass/)
 by Jonas Schmedmann (https://www.udemy.com/course/advanced-css-and-sass/#instructor-1)
 
 MDN: https://developer.mozilla.org/en-US/docs/Web
 
-## Project 1: Natours Website
+## Lesson 6) Building the Header - Part 1
+"Percentages ... are defined relative to the value of the **parent element's** corresponding parameter"
+  (https://www.udemy.com/course/advanced-css-and-sass/learn/lecture/8274486#questions/9667946)
 
-### Lesson 6) Building the Header - Part 1
-- Perform a basic reset: use the universal selector to apply certain non-inheritable rules
-  to all elements.
-- Define font properties on the "body" selector. Font properties are generally inheritable,
-  and inheritance is more efficient than applying properties via the universal selector.
-- other properties covered:
-    - background-image
-        - multiple images can be specified, separated by commas, with the first image on "top"
-          (closest to user)
-        - use the url() function with the pathname of the image file (no quotes) relative to the
-          location of the css file
-        - use the linear-gradient() function to specify a color gradient
-    - background-size
-    - background-position
-    - clip=path
-- multiple background-images can be applied, separated by commas
-- background-size property sets the size of the element's background image
-- clip-path property clips what is seen in the element
-    - various functions allow for various clip shapes; the "polygon()" function was used in this
-      lesson.
+### Basic Reset
 
-### Lesson 7) Building the Header - Part 2
+Use the universal selector to apply certain non-inheritable rules to all elements.
+
+### Font Properties
+
+Define on the "body" selector. Font properties are generally inheritable,
+and inheritance is more efficient than applying properties via the universal selector.
+
+### `background-image`
+- Applies one or more background images on an element
+- multiple images can be specified, separated by commas, with the first image on "top"
+  (closest to user)
+- `url()` function to specify pathname of the image
+- `linear-gradient()` function specifies a color gradient
+- [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image)
+
+### `background-size`
+- Sets the size of the element's background image
+- Can take 1 or 2 values:
+    - One-value applies to image width, implies value of `auto` for height
+    - Two-value syntax: width, height
+- Valid values:
+    - `auto`: scales image in corresponding direction to maintain intrinsic proportions
+    - `cover`: scales image (preserving aspect ratio) to smallest possible size to fill container, leaving no empty
+      space, cropping as necessary
+    - `contain`: scales image (preserving aspect ration) as large as possible, without cropping or stretching. Empty
+      space will be covered by tiling, unless `backoungrd-repeat` is set to `no-repeat`
+    - &lt;length&gt;: Stretches image to specified length; negative values not allowd
+    - &lt;percentage&gt; Stretches image to specified percentage of the *background positioning area*
+- [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size)
+
+### `background-position`
+- sets the initial position for each background image
+- relative to position layer set by `background-origin`
+- [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position)
+
+### `clip-path`
+- clips what is seen in the element
+- defines a clipping region
+- parts of the element inside the region are shown; outside are not
+- [Online CSS clip-path maker](bennettfeely.com/clippy) 
+
+### `url()`
+- Used to include a file
+- parameter: absolute, relative, blob or data URL; quotes optional, unless it contains whitespace, etc
+- [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path)
+
+### `linear-gradient()`
+- Creates an image consisting of a progressive transition between two or more colors along a straight line
+- [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient) 
+
+### `polygon()`
+- Creates a polygon by specifying one or more pairs of coordinates
+- [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape/polygon)
+
+
+## Lesson 7) Building the Header - Part 2
 - position: absolute
     - top/bottom and left/right are relative to first positioned ancestor,
       so add position to the ancestor (traditionally we use "relative" for ancestor)
 - centering:
-  - position: absolute;
-  - top: 50%;
-  - left: 50%;
-  - transform: translate(-50%, -50%);
-  - 50% in top and left refer to 50% of the size of the container.
-  - 50% in translate refers to 50% of the size of the element itself.
+    - position: absolute;
+    - top: 50%;
+    - left: 50%;
+    - transform: translate(-50%, -50%);
+    - 50% in top and left refer to 50% of the size of the container.
+    - 50% in translate refers to 50% of the size of the element itself.
 - `<h1>` is the most important element for SEO, so the entire title should be included,
   even if the entire title is not displayed uniformly. So break it into spans and
   style the spans.
@@ -51,18 +91,21 @@ MDN: https://developer.mozilla.org/en-US/docs/Web
 - add "backface-visibility: hidden" property on parent (?)
 
 ### Lesson 9) Building a Complex Animated Button - Part 1
+
 - pseudo-class: special state (eg: link, active, hover)
 - position: inline-block is treated as text, so it can be centered by putting text-align: center on the parent
 - transform property used for lots of animations
 - transforms are relative to base state, not to other any other (eg, "current") state
 
 ### Lesson 10) Building a Complex Animated Button - Part 2
+
 - pseudo-elements are not "real" elements, in the DOM, but act like elements
 - ::after requires content and display properties, even if empty, or it won't appear
 - ::after acts as a child of the target element
 - animation-fill-mode to set initial state of an animation
 
 ### Lesson 12) Three Pillars of HTML and CSS (Never Forget Them!)
+
 1) Responsive Design:
     - every website should work correctly across different devices and display sizes
     - responsive images
@@ -74,12 +117,14 @@ MDN: https://developer.mozilla.org/en-US/docs/Web
     - class names
     - HTML structure
 3) Web Performance
-   - faster, smaller
+    - faster, smaller
+
 - minimize HTTP requests
 - compress code, images
 - CSS preprocessor
 
 ### Lesson 13) How CSS Works Behind the Scenes: An Overview
+
 - What happens when an HTML page is loaded?
     - browser parses the HTML into a DOM
     - CSS files are loaded and parsed into CSSOM
@@ -220,19 +265,35 @@ A mixin does not translate into CSS per se; rather, the mixin definition is copi
 wherever the mixin is @included:
 
 ```scss
-@mixin <mixin-name>(<args>) {
-  <mixin code;>
+@mixin
+
+<
+mixin-name >
+
+(
+<
+args >
+
+)
+{
+<
+mixin
+code
+;
+>
 }
 
-@include <mixin-name>
+@include
+<
+mixin-name >
 ```
 
 A function returns a value:
 
 ```scss
 @function fn-name(args) {
-  ...
-  @return val;
+    ...
+    @return val;
 }
 ```
 
@@ -241,7 +302,7 @@ only use extend if the extended items are related; otherwise, use a mixin
 
 ```scss
 %extend-name {
-  rules;
+    rules;
 }
 
 @extend extend-name;
@@ -402,100 +463,116 @@ Chapter 37) Building the About Section - Part 3
 - Hide the input control, but since it is connected to the label, clicking the label still selects the radio button
 
 ### Lesson 48) Building the Footer
+
 No new concepts
 
 ### Lesson 49) Building the Navigation - Part 1
+
 Animating "solid-color gradients"
+
 - linear-gradient(): progressive transition between two or more colors along a straight line.
 - background-size: sets size of element's background image: `contain`, `cover,` length or percentage
-- background-position: initial position for the image: `top`, `bottom`, `left`, `right`, `center`, percentage, length 
+- background-position: initial position for the image: `top`, `bottom`, `left`, `right`, `center`, percentage, length
+
 ```scss
 a {
-  &:link, &:visited {
-    background-image: linear-gradient(120deg, $color-1 0%, $color-1 50%, $color-2 %50%);
-    background-size: 220%;
-    transition: background-position .4s;
-  }
+    &:link, &:visited {
+        background-image: linear-gradient(120deg, $color-1 0%, $color-1 50%, $color-2 %50%);
+        background-size: 220%;
+        transition: background-position .4s;
+    }
 
-  &:hover,
-  &:active {
-    background-position: 100%
-  }
+    &:hover,
+    &:active {
+        background-position: 100%
+    }
 }
 ```
 
 ### Lesson 50) Building the Navigation - Part 2
+
 "checkbox hack":
+
 - checkbox or radio button w/ associated label.
-- Checkbox `display: none`; 
+- Checkbox `display: none`;
 - label still receives click events
 - style the `:checked` pseudo class
-Animate the background and nav elements w/ `transition` property
+  Animate the background and nav elements w/ `transition` property
+
 ```scss
 input[type=checkbox] {
-  display: none;
+    display: none;
 
-  &:checked ~  {
-    
-  }
+    &:checked ~ {
+
+    }
 }
 ```
+
 custom animation timing functions using cubic bezier curves
+
 - cubic-bezier() function
 - _ref: http://cubic-bezier.com_
+
 ```scss
 &__background {
-  transition: transform .8s cubic-bezier(.86, 0, 0.07, 1);
+    transition: transform .8s cubic-bezier(.86, 0, 0.07, 1);
 }
 
 &__nav {
-  transition: all .8s cubic-bezier(.68, -.55, .265, 1.55);
+    transition: all .8s cubic-bezier(.68, -.55, .265, 1.55);
 }
 
 &__checkbox:checked ~ &__background {
-  transform: scale(80);
+    transform: scale(80);
 }
 
 &__checkbox:checked ~ &__nav {
-  opacity: 1;
-  width: 100vw;
+    opacity: 1;
+    width: 100vw;
 }
 ```
 
 ### Lesson 51) Building the Navigation - Part 3
-`transform-origin` describes where the transformation happens. 
+
+`transform-origin` describes where the transformation happens.
 By default transform Happens in the center of the element.
 
-
 ### Lesson 52) Building a Pure CSS Popup - Part 1
+
 How to build a nice popup with only CSS
 
 - How to use the `:target` pseudo-class
 
 **Adjacent boxes with equal height**  
-Displaying adjacent elements as "table-cell" will make their heights the same, 
+Displaying adjacent elements as "table-cell" will make their heights the same,
 regardless of content size.
+
 ```scss
 parent {
-  display: table; 
+    display: table;
 
-  child {
-    display: table-cell; /* These elements behave like <td> HTML elements. */
-    vertical-align: middle;  /* Or whatever alignment works */
-  }
+    child {
+        display: table-cell; /* These elements behave like <td> HTML elements. */
+        vertical-align: middle; /* Or whatever alignment works */
+    }
 }
 ```
+
 **CSS text columns**
-Use the CSS `column-count` property.  Browser will distribute content equally between the columns. 
+Use the CSS `column-count` property. Browser will distribute content equally between the columns.
+
 ```css
 container {
     column-count: 3;
-    column-gap: 2rem;  /* 1em default */
+    column-gap: 2rem; /* 1em default */
     column-rule: 1px solid gray; /* a line between columns */
 }
 ```
+
 **Hyphenating words in text content**  
-Use the CSS `hyphens` property.  Requires `lang` attribute in `<html>` element.
+Use the CSS `hyphens` property. Requires `lang` attribute in `<html>` element.
+
 ```css
 content {
     hyphens: auto;
@@ -503,50 +580,57 @@ content {
 ```
 
 ### Lesson 53) Building a Pure CSS Popup - Part 2
+
 How to use the `:target` pseudo-class
-- an anchor tag uses the ID of an element as its href: eg, `href="#signup-form"`  
+
+- an anchor tag uses the ID of an element as its href: eg, `href="#signup-form"`
 - when an element becomes a target, the `:target` pseudo-class becomes available:
+
 ```scss
 &:target {
-  ...  
+    ...
 }
 ```
 
 ### Lesson 54) Section Intro
+
 Focus on making site responsive.
-Covers advanced techniques for responsive design: media queries for screen width, resolution, touch capabilities, 
+Covers advanced techniques for responsive design: media queries for screen width, resolution, touch capabilities,
 responsive images, feature queries
 
-
 ### Lesson 55) Mobile-First vs Desktop-First and Breakpoints
+
 Media queries: no importance or specificity; conflicts resolved by order: final applicable query takes precedence
 
 **Desktop first**  Optimize for large screen; add media queries for smaller screens (max-width queries)
+
 ```css
 
 ```
 
 **Mobile first**  Optimize for small screen; add media queries for larger screens (min-width queries)  
 Pros:
+
 - forces us to reduce apps to absolute essentials
 - smaller, faster, more efficient products
 - prioritizes content over aesthetics
 
 Cons:
+
 - desktop version might feel empty, simplistic
 - might be more difficult/counter-intuitive
 - less creative freedom
 - clients might be accustomed to desktop versions for prototypes
 - do the app users even use mobile?
 
-- **Selecting Breakpoints** 
+- **Selecting Breakpoints**
 - bad: select based on the dimensions of the single most populate device in each category
 - good: select based on the dimensions of the largest (mobile-first) or smallest (desktop-first) device in each category
 - perfect: select based on where your design breaks (but it can be difficult)
 - ref: https://gs.statcounter.com/screen-resolution-stats
 
-
 ### Lesson 56) Let's Use the Power of Sass Mixins to Write Media Queries
+
 - Sass mixin to write media queries
 - @content and @if Sass directives
 - Using Chrome DevTools for responsive design
@@ -555,6 +639,7 @@ Cons:
 
 Define the mixin with increasing breakpoints for desktop-first,
 decreasing breakpoints for mobile-first
+
 ```scss
 /* $breakpoint argument choices: 
 * phone
@@ -566,19 +651,28 @@ decreasing breakpoints for mobile-first
 */
 @mixin respond($breakpoint) {
     @if $breakpoint == phone {
-        @media (max-width: 37.5em) { @content };   // 600px
+        @media (max-width: 37.5em) {
+            @content
+        }; // 600px
     }
     @if $breakpoint == tab-port {
-        @media (max-width: 56.25em) { @content };   // 900px
+        @media (max-width: 56.25em) {
+            @content
+        }; // 900px
     }
     @if $breakpoint == tab-land {
-        @media (max-width: 75em) { @content };   // 1200px
+        @media (max-width: 75em) {
+            @content
+        }; // 1200px
     }
     @if $breakpoint == big-desktop {
-        @media (min-width: 112.5em) { @content };   //1800px
+        @media (min-width: 112.5em) {
+            @content
+        }; //1800px
     }
 }
 ```
+
 Then, where media queries are required, @include the mixin passing the breakpoint as a parameter;
 the content of the media query will be passed automatically to the mixin. For example:
 

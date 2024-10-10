@@ -7,24 +7,6 @@ MDN: https://developer.mozilla.org/en-US/docs/Web
 * Project 1: Natours Web Site
 ********************************************************************************
 
-Lecture 6) Building the Header - Part 1
-* Basic reset: universal selector applies to every element
-* font properties in the body selector, since they are inherited from parent
-* background images use "url()" function, relative to location of the style sheet
-* background gradients use also "background-image" property,
-  * "linear-gradient()" function and others
-* "background-size" property "sets the size of the element's background image" (MDN)
-  * "cover" "scales the image as large as possible to fill the container, stretching
-     the image if necessary" (MDN)
-* "background-position" property "sets the initial position for each background image" (MDN)
-  * "top" pins the top of the image; any necessary cropping crops elsewhere in the image
-* "vh" is percentage of view port height
-* "Percentages ... are defined relative to the value of the parent element's corresponding parameter"
-   (https://www.udemy.com/course/advanced-css-and-sass/learn/lecture/8274486#questions/9667946)
-* clip-path property and polygon() function
-* bennettfeely.com/clippy: CSS clip-path maker
-
-
 Lecture 7) Building the Header - Part 2
 * Positioning an inline element is easiest if it is wrapped in a block element
 * Position: absolute is relative to nearest positioned ancestor, so position an ancestor
